@@ -1,10 +1,23 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Lottie from "lottie-react";
 import car from "./14717-sedan-car-animation.json";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { logOut, user } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    logOut()
+      .then(() => {
+        // Sign-out successful.
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full  md:px-24 lg:px-8 bg-slate-100">
       <div className="relative flex items-center justify-between ">
@@ -54,19 +67,8 @@ const Navbar = () => {
               About
             </NavLink>
           </li>
+
           <li>
-            <NavLink
-              to="/login"
-              className={({ isActive }) =>
-                isActive
-                  ? "active hover:text-blue-400"
-                  : "default hover:text-blue-400"
-              }
-            >
-              Login
-            </NavLink>
-          </li>
-          {/* <li>
             {user ? (
               <button className="active " onClick={handleLogout}>
                 {" "}
@@ -84,7 +86,7 @@ const Navbar = () => {
                 Login
               </NavLink>
             )}
-          </li> */}
+          </li>
         </ul>
         {/* mobile navbar  */}
         <div className="lg:hidden">
