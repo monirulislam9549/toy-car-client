@@ -3,6 +3,7 @@ import Lottie from "lottie-react";
 import { AuthContext } from "../../provider/AuthProvider";
 import reg from "./78126-secure-login.json";
 import { Link } from "react-router-dom";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Register = () => {
   const [error, setError] = useState("");
@@ -99,6 +100,7 @@ const Register = () => {
           </form>
           <p className="text-red-600 text-center">{error}</p>
           <p className="text-blue-600 text-center">{success}</p>
+          <SocialLogin></SocialLogin>
           <p className="my-4 text-center">
             Already Have an account?
             <Link className="text-orange-600 font-bold" to="/login">

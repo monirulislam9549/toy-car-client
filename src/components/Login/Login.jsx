@@ -3,6 +3,7 @@ import login from "./38435-register.json";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
@@ -66,6 +67,7 @@ const Login = () => {
                 <button className="btn btn-primary">Login</button>
               </div>
             </form>
+            <SocialLogin></SocialLogin>
             <p className="my-4 text-center">
               New to Toy Car?
               <Link className="text-orange-600 font-bold" to="/register">
