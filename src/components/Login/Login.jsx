@@ -1,8 +1,31 @@
 import Lottie from "lottie-react";
 import login from "./38435-register.json";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const Login = () => {
+  const { signIn } = useContext(AuthContext);
+  const handleLogin = (event) => {
+    event.preventDefault();
+
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+
+    signIn(email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+        form.reset();
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage);
+      });
+  };
   return (
     <div>
       <div className="hero min-h-screen">
@@ -10,14 +33,16 @@ const Login = () => {
           <Lottie animationData={login} className="w-96 h-96"></Lottie>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <h1 className="text-5xl font-bold text-center">Login now!</h1>
-            <form className="card-body">
+            <form onSubmit={handleLogin} className="card-body">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
                 </label>
                 <input
-                  type="text"
+                  type="email"
                   placeholder="email"
+                  name="email"
+                  required
                   className="input input-bordered"
                 />
               </div>
@@ -26,7 +51,8 @@ const Login = () => {
                   <span className="label-text">Password</span>
                 </label>
                 <input
-                  type="text"
+                  type="password"
+                  name="password"
                   placeholder="password"
                   className="input input-bordered"
                 />
