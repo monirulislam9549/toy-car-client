@@ -8,32 +8,33 @@ import Blog from "./components/Blog/Blog.jsx";
 import Login from "./components/Login/Login.jsx";
 import Register from "./components/Register/Register.jsx";
 import About from "./components/About/About.jsx";
-import NotFound from "./components/NotFound/NotFound.jsx";
+import AuthProvider from "./provider/AuthProvider.jsx";
+// import NotFound from "./components/NotFound/NotFound.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
-    errorElement: <NotFound></NotFound>,
+    // errorElement: <NotFound></NotFound>,
     children: [
       {
         path: "/",
         element: <Home></Home>,
       },
       {
-        path: "/blog",
+        path: "blog",
         element: <Blog></Blog>,
       },
       {
-        path: "/login",
+        path: "login",
         element: <Login></Login>,
       },
       {
-        path: "/register",
+        path: "register",
         element: <Register></Register>,
       },
       {
-        path: "/about",
+        path: "about",
         element: <About></About>,
       },
     ],
@@ -42,6 +43,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <AuthProvider>
+      <RouterProvider router={router}></RouterProvider>
+    </AuthProvider>
   </React.StrictMode>
 );

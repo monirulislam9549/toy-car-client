@@ -54,6 +54,18 @@ const Navbar = () => {
               About
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="/login"
+              className={({ isActive }) =>
+                isActive
+                  ? "active hover:text-blue-400"
+                  : "default hover:text-blue-400"
+              }
+            >
+              Login
+            </NavLink>
+          </li>
           {/* <li>
             {user ? (
               <button className="active " onClick={handleLogout}>
