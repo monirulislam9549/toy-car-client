@@ -8,11 +8,13 @@ import Blog from "./components/Blog/Blog.jsx";
 import Login from "./components/Login/Login.jsx";
 import Register from "./components/Register/Register.jsx";
 import About from "./components/About/About.jsx";
+import NotFound from "./components/NotFound/NotFound.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
+    errorElement: <NotFound></NotFound>,
     children: [
       {
         path: "/",
