@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const ToyTable = ({ toy, handleDelete }) => {
   const { _id, name, photo, seller, email, category, price, rating, quantity } =
     toy;
@@ -27,7 +29,9 @@ const ToyTable = ({ toy, handleDelete }) => {
         >
           Delete
         </button>
-        <button className="btn btn-ghost btn-xs">Edit</button>
+        <Link to={`/editToy/${_id}`}>
+          <button className="btn btn-ghost btn-xs">Edit</button>
+        </Link>
       </th>
     </tr>
   );

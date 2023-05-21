@@ -11,6 +11,7 @@ const ToyCard = ({ toy }) => {
         <h2 className="card-title">{name}</h2>
         <p>{price}</p>
         <p>{rating}</p>
+        {/* <p>{description}</p> */}
         <button>
           <Link to={`/details/${_id}`}>See Details</Link>
         </button>

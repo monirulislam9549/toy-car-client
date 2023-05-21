@@ -12,6 +12,7 @@ import AuthProvider from "./provider/AuthProvider.jsx";
 import AddToy from "./components/AddToy/AddToy.jsx";
 import ToyDetails from "./components/ToyDetails/ToyDetails.jsx";
 import MyToy from "./components/MyToy/MyToy.jsx";
+import EditToys from "./components/EditToys/EditToys.jsx";
 // import NotFound from "./components/NotFound/NotFound.jsx";
 
 const router = createBrowserRouter([
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: "myToy",
         element: <MyToy></MyToy>,
+      },
+      {
+        path: "editToy/:id",
+        element: <EditToys></EditToys>,
       },
       {
         path: "login",

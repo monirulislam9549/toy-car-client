@@ -23,6 +23,7 @@ const AddToy = () => {
     const price = form.price.value;
     const rating = form.rating.value;
     const quantity = form.quantity.value;
+    const description = form.description.value;
     const dataObj = {
       name,
       photo,
@@ -32,6 +33,7 @@ const AddToy = () => {
       price,
       rating,
       quantity,
+      description,
     };
     // console.log(dataObj);
     fetch("http://localhost:5000/postToy", {
@@ -150,7 +152,7 @@ const AddToy = () => {
             </label>
             <input
               type="text"
-              name="detail"
+              name="description"
               //   defaultValue={"$" + price}
               className="input input-bordered"
             />
