@@ -10,7 +10,6 @@ const ToyTable = ({ toy }) => {
               <img src={photo} alt="Avatar Tailwind CSS Component" />
             </div>
           </div>
-          <div>{/* <div className="font-bold">{name}</div> */}</div>
         </div>
       </td>
       <td>{seller}</td>
@@ -20,7 +19,10 @@ const ToyTable = ({ toy }) => {
       <td>{price}</td>
       <td>{rating}</td>
       <td>{quantity}</td>
-      <th>{/* <button className="btn btn-ghost btn-xs">details</button> */}</th>
+      <th>
+        <button className="btn btn-ghost btn-xs">Delete</button>
+        <button className="btn btn-ghost btn-xs">Edit</button>
+      </th>
     </tr>
   );
 };
