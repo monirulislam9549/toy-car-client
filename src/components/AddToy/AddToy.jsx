@@ -92,7 +92,6 @@ const AddToy = () => {
               type="text"
               name="email"
               defaultValue={user?.email}
-              //   defaultValue={"$" + price}
               className="input input-bordered"
             />
           </div>
@@ -118,23 +117,13 @@ const AddToy = () => {
             <label className="label">
               <span className="label-text">Price</span>
             </label>
-            <input
-              type="text"
-              name="price"
-              //   defaultValue={"$" + price}
-              className="input input-bordered"
-            />
+            <input type="text" name="price" className="input input-bordered" />
           </div>
           <div className="form-control">
             <label className="label">
               <span className="label-text">Rating</span>
             </label>
-            <input
-              type="text"
-              name="rating"
-              //   defaultValue={"$" + price}
-              className="input input-bordered"
-            />
+            <input type="text" name="rating" className="input input-bordered" />
           </div>
           <div className="form-control">
             <label className="label">
@@ -153,7 +142,6 @@ const AddToy = () => {
             <input
               type="text"
               name="description"
-              //   defaultValue={"$" + price}
               className="input input-bordered"
             />
           </div>

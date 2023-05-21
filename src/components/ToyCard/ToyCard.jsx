@@ -13,7 +13,7 @@ const ToyCard = ({ toy }) => {
         <p>{rating}</p>
         {/* <p>{description}</p> */}
         <button>
-          <Link to={`/details/${_id}`}>See Details</Link>
+          <Link to={`/toy/${_id}`}>See Details</Link>
         </button>
       </div>
     </div>
