@@ -58,18 +58,6 @@ const Navbar = () => {
 
           <li>
             <NavLink
-              to="/addToy"
-              className={({ isActive }) =>
-                isActive
-                  ? "active hover:text-blue-400"
-                  : "default hover:text-blue-400"
-              }
-            >
-              Add Toy
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
               to="/allToy"
               className={({ isActive }) =>
                 isActive
@@ -80,26 +68,49 @@ const Navbar = () => {
               All Toy
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              to="/myToy"
-              className={({ isActive }) =>
-                isActive
-                  ? "active hover:text-blue-400"
-                  : "default hover:text-blue-400"
-              }
-            >
-              My Toy
-            </NavLink>
-          </li>
 
-          <li>
-            {user ? (
+          {/* <li>
+            {user?.email ? (
+            
+            ) : (
+              
+            )}
+          </li> */}
+
+          {user?.email ? (
+            <>
+              <li>
+                <NavLink
+                  to="/addToy"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "active hover:text-blue-400"
+                      : "default hover:text-blue-400"
+                  }
+                >
+                  Add Toy
+                </NavLink>
+              </li>
+
+              <li>
+                <NavLink
+                  to="/myToy"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "active hover:text-blue-400"
+                      : "default hover:text-blue-400"
+                  }
+                >
+                  My Toy
+                </NavLink>
+              </li>
               <button className="active " onClick={handleLogout}>
                 {" "}
                 Logout
               </button>
-            ) : (
+            </>
+          ) : (
+            <li>
               <NavLink
                 to="/login"
                 className={({ isActive }) =>
@@ -110,8 +121,8 @@ const Navbar = () => {
               >
                 Login
               </NavLink>
-            )}
-          </li>
+            </li>
+          )}
         </ul>
         {/* mobile navbar  */}
         <div className="lg:hidden">
