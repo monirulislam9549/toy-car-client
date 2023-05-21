@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const AddToy = () => {
+  const { user } = useContext(AuthContext);
   const categories = ["sportsCar", "policeCar", "miniTruck"];
 
   const [selectCategory, setSelectCategory] = useState(categories[0]);
@@ -76,7 +78,6 @@ const AddToy = () => {
             <input
               type="text"
               name="seller"
-              //   defaultValue={user?.email}
               placeholder="Seller Name"
               className="input input-bordered"
             />
@@ -88,6 +89,7 @@ const AddToy = () => {
             <input
               type="text"
               name="email"
+              defaultValue={user?.email}
               //   defaultValue={"$" + price}
               className="input input-bordered"
             />

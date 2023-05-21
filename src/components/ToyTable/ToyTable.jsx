@@ -1,5 +1,6 @@
-const ToyTable = ({ toy }) => {
-  const { name, photo, seller, email, category, price, rating, quantity } = toy;
+const ToyTable = ({ toy, handleDelete }) => {
+  const { _id, name, photo, seller, email, category, price, rating, quantity } =
+    toy;
   return (
     <tr>
       <td></td>
@@ -20,7 +21,12 @@ const ToyTable = ({ toy }) => {
       <td>{rating}</td>
       <td>{quantity}</td>
       <th>
-        <button className="btn btn-ghost btn-xs">Delete</button>
+        <button
+          onClick={() => handleDelete(_id)}
+          className="btn btn-ghost btn-xs"
+        >
+          Delete
+        </button>
         <button className="btn btn-ghost btn-xs">Edit</button>
       </th>
     </tr>
