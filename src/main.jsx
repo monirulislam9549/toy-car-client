@@ -13,13 +13,14 @@ import AddToy from "./components/AddToy/AddToy.jsx";
 import ToyDetails from "./components/ToyDetails/ToyDetails.jsx";
 import MyToy from "./components/MyToy/MyToy.jsx";
 import EditToys from "./components/EditToys/EditToys.jsx";
-// import NotFound from "./components/NotFound/NotFound.jsx";
+import PrivateRoute from "./components/routes/PrivateRoute.jsx";
+import NotFound from "./components/NotFound/NotFound.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
-    // errorElement: <NotFound></NotFound>,
+    errorElement: <NotFound></NotFound>,
     children: [
       {
         path: "/",
@@ -31,7 +32,11 @@ const router = createBrowserRouter([
       },
       {
         path: "toy/:id",
-        element: <ToyDetails></ToyDetails>,
+        element: (
+          <PrivateRoute>
+            <ToyDetails></ToyDetails>
+          </PrivateRoute>
+        ),
       },
       {
         path: "addToy",

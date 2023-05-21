@@ -2,13 +2,17 @@ import { useContext, useState } from "react";
 import Lottie from "lottie-react";
 import { AuthContext } from "../../provider/AuthProvider";
 import reg from "./78126-secure-login.json";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Register = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const { createUser } = useContext(AuthContext);
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const handleRegister = (event) => {
     event.preventDefault();
@@ -30,6 +34,7 @@ const Register = () => {
         console.log(user);
         setSuccess("User Created Successfully");
         form.reset();
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error);

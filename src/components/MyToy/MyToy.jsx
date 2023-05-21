@@ -9,7 +9,7 @@ const MyToy = () => {
   const [searchText, setSearchText] = useState("");
 
   const handleSearch = () => {
-    fetch(`http://localhost:5000/searchToyName/${searchText}`)
+    fetch(`https://toy-car-server-beryl.vercel.app/searchToyName/${searchText}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -29,7 +29,7 @@ const MyToy = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/toy/${_id}`, {
+        fetch(`https://toy-car-server-beryl.vercel.app/toy/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -45,7 +45,7 @@ const MyToy = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myToy/${user?.email}`)
+    fetch(`https://toy-car-server-beryl.vercel.app/myToy/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
@@ -98,10 +98,11 @@ const MyToy = () => {
           </tr>
         </thead>
         <tbody>
-          {toys.map((toy) => (
+          {toys.map((toy, index) => (
             <ToyTable
               key={toy._id}
               toy={toy}
+              index={index}
               handleDelete={handleDelete}
             ></ToyTable>
           ))}

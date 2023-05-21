@@ -6,7 +6,7 @@ const ToyDetails = () => {
   const [detailsToy, setDetailsToy] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:5000/toy/${id}`)
+    fetch(`https://toy-car-server-beryl.vercel.app/toy/${id}`)
       .then((res) => res.json())
       .then((data) => setDetailsToy(data));
   }, [id]);

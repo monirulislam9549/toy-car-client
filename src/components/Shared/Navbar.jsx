@@ -23,7 +23,7 @@ const Navbar = () => {
       <div className="relative flex items-center justify-between ">
         <Link to="/" className="inline-flex items-center">
           <span className="ml-2 font-bold text-xl tracking-wide text-gray-800">
-            Petite Cuisine
+            Street Hero
           </span>
 
           <Lottie className="w-24 h-24" animationData={car}></Lottie>
@@ -66,6 +66,18 @@ const Navbar = () => {
               }
             >
               Add Toy
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/allToy"
+              className={({ isActive }) =>
+                isActive
+                  ? "active hover:text-blue-400"
+                  : "default hover:text-blue-400"
+              }
+            >
+              All Toy
             </NavLink>
           </li>
           <li>
@@ -117,7 +129,7 @@ const Navbar = () => {
                   <div>
                     <Link to="/" className="inline-flex items-center">
                       <span className="ml-2 font-bold text-xl tracking-wide text-gray-800">
-                        Petite Cuisine
+                        Street Hero
                       </span>
                       <Lottie
                         className="w-24 h-24"

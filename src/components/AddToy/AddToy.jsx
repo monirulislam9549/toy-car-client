@@ -36,7 +36,7 @@ const AddToy = () => {
       description,
     };
     // console.log(dataObj);
-    fetch("http://localhost:5000/postToy", {
+    fetch("https://toy-car-server-beryl.vercel.app/postToy", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(dataObj),

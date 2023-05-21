@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 
-const ToyTable = ({ toy, handleDelete }) => {
+const ToyTable = ({ toy, handleDelete, index }) => {
   const { _id, name, photo, seller, email, category, price, rating, quantity } =
     toy;
   return (
     <tr>
-      <td></td>
+      <td>{index + 1}</td>
       <td>
         <div className="flex items-center space-x-3">
           <div className="avatar">

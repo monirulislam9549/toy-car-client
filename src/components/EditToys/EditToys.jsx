@@ -14,7 +14,7 @@ const EditToys = () => {
       quantity,
       description,
     };
-    fetch(`http://localhost:5000/editToy/${id}`, {
+    fetch(`https://toy-car-server-beryl.vercel.app/editToy/${id}`, {
       method: "PATCH",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(dataObj),

@@ -6,7 +6,7 @@ const ToyCollection = () => {
   const [activeTab, setActiveTab] = useState("all");
 
   useEffect(() => {
-    fetch(`http://localhost:5000/allToy/${activeTab}`)
+    fetch(`https://toy-car-server-beryl.vercel.app/allToy/${activeTab}`)
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
@@ -26,7 +26,7 @@ const ToyCollection = () => {
         <div className="flex justify-center items-center">
           <div
             onClick={() => handleTabClick("sportsCar")}
-            className={`cursor-pointer rounded bg-white py-3 px-9 tab2 sportsCar ${
+            className={`cursor-pointer rounded py-3 px-9 tab2 sportsCar ${
               activeTab == "sportsCar" ? " bg-red-600 text-white" : ""
             }`}
           >
@@ -34,7 +34,7 @@ const ToyCollection = () => {
           </div>
           <div
             onClick={() => handleTabClick("policeCar")}
-            className={`cursor-pointer rounded bg-white py-3 px-9 tab2 policeCar ${
+            className={`cursor-pointer rounded  py-3 px-9 tab2 policeCar ${
               activeTab == "policeCar" ? " bg-red-600 text-white" : ""
             }`}
           >
@@ -42,7 +42,7 @@ const ToyCollection = () => {
           </div>
           <div
             onClick={() => handleTabClick("miniTruck")}
-            className={`cursor-pointer rounded bg-white py-3 px-9 tab2 miniTruck ${
+            className={`cursor-pointer rounded py-3 px-9 tab2 miniTruck ${
               activeTab == "miniTruck" ? " bg-red-600 text-white" : ""
             }`}
           >
