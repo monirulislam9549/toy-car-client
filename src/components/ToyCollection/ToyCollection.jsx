@@ -1,7 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import ToyCard from "../ToyCard/ToyCard";
 
 const ToyCollection = () => {
+  const [toys, setToys] = useState([]);
   const [activeTab, setActiveTab] = useState("sportsCar");
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/allToy/${activeTab}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setToys(data);
+      });
+  }, [activeTab]);
 
   const handleTabClick = (tabName) => {
     setActiveTab(tabName);
@@ -39,6 +49,11 @@ const ToyCollection = () => {
             miniTruck
           </div>
         </div>
+      </div>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {toys.map((toy) => (
+          <ToyCard key={toy._id} toy={toy}></ToyCard>
+        ))}
       </div>
     </div>
   );
