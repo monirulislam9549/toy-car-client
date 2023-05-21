@@ -11,6 +11,7 @@ import About from "./components/About/About.jsx";
 import AuthProvider from "./provider/AuthProvider.jsx";
 import AddToy from "./components/AddToy/AddToy.jsx";
 import ToyDetails from "./components/ToyDetails/ToyDetails.jsx";
+import MyToy from "./components/MyToy/MyToy.jsx";
 // import NotFound from "./components/NotFound/NotFound.jsx";
 
 const router = createBrowserRouter([
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: "addToy",
         element: <AddToy></AddToy>,
+      },
+      {
+        path: "myToy",
+        element: <MyToy></MyToy>,
       },
       {
         path: "login",
