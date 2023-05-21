@@ -3,7 +3,7 @@ import ToyCard from "../ToyCard/ToyCard";
 
 const ToyCollection = () => {
   const [toys, setToys] = useState([]);
-  const [activeTab, setActiveTab] = useState("sportsCar");
+  const [activeTab, setActiveTab] = useState("all");
 
   useEffect(() => {
     fetch(`http://localhost:5000/allToy/${activeTab}`)
