@@ -3,6 +3,8 @@ import { Link, NavLink } from "react-router-dom";
 import Lottie from "lottie-react";
 import car from "./14717-sedan-car-animation.json";
 import { AuthContext } from "../../provider/AuthProvider";
+import { FaBars } from "react-icons/fa";
+import { HiX } from "react-icons/hi";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -131,7 +133,9 @@ const Navbar = () => {
             aria-level="Open Menu"
             title="Open Menu"
             onClick={() => setIsMenuOpen(true)}
-          ></button>
+          >
+            <FaBars className="text-white"></FaBars>
+          </button>
           {isMenuOpen && (
             <div className="absolute top-0 left-0 w-full z-10">
               <div className="p-5 bg-white border rounded shadow-sm">
@@ -154,7 +158,9 @@ const Navbar = () => {
                       aria-level="Close Menu"
                       title="Close Menu"
                       onClick={() => setIsMenuOpen(false)}
-                    ></button>
+                    >
+                      <HiX></HiX>
+                    </button>
                   </div>
                 </div>
                 {/* Mobile nav item section */}
@@ -176,13 +182,40 @@ const Navbar = () => {
                         Blog
                       </Link>
                     </li>
-                    {/* <li>
-                      {user ? (
+                    {user?.email ? (
+                      <>
+                        <li>
+                          <NavLink
+                            to="/addToy"
+                            className={({ isActive }) =>
+                              isActive
+                                ? "active hover:text-blue-400"
+                                : "default hover:text-blue-400"
+                            }
+                          >
+                            Add Toy
+                          </NavLink>
+                        </li>
+
+                        <li>
+                          <NavLink
+                            to="/myToy"
+                            className={({ isActive }) =>
+                              isActive
+                                ? "active hover:text-blue-400"
+                                : "default hover:text-blue-400"
+                            }
+                          >
+                            My Toy
+                          </NavLink>
+                        </li>
                         <button className="active " onClick={handleLogout}>
                           {" "}
                           Logout
                         </button>
-                      ) : (
+                      </>
+                    ) : (
+                      <li>
                         <NavLink
                           to="/login"
                           className={({ isActive }) =>
@@ -193,16 +226,8 @@ const Navbar = () => {
                         >
                           Login
                         </NavLink>
-                      )}
-                    </li> */}
-                    <li>
-                      <Link
-                        to="/login"
-                        className="font-medium tracking-wide text-gray-700 transition duration-200 hover:text-blue-400"
-                      >
-                        Login
-                      </Link>
-                    </li>
+                      </li>
+                    )}
                   </ul>
                 </nav>
               </div>
