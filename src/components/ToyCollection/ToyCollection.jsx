@@ -18,19 +18,19 @@ const ToyCollection = () => {
   };
 
   return (
-    <div className="mb-5">
+    <div className="mb-5 px-5">
       <h1 className="text-center font-bold text-5xl my-10 text-green-500">
         Shop by category
       </h1>
       <div>
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center bg-green-500 my-5 text-white p-5 font-semibold">
           <div
             onClick={() => handleTabClick("sportsCar")}
             className={`cursor-pointer rounded py-3 px-9 tab2 sportsCar ${
               activeTab == "sportsCar" ? " bg-red-600 text-white" : ""
             }`}
           >
-            sportsCar
+            Sports Car
           </div>
           <div
             onClick={() => handleTabClick("policeCar")}
@@ -38,19 +38,19 @@ const ToyCollection = () => {
               activeTab == "policeCar" ? " bg-red-600 text-white" : ""
             }`}
           >
-            policeCar
+            Police Car
           </div>
           <div
             onClick={() => handleTabClick("miniTruck")}
-            className={`cursor-pointer rounded py-3 px-9 tab2 miniTruck ${
+            className={`cursor-pointer rounded py-3 px-6 tab2 miniTruck ${
               activeTab == "miniTruck" ? " bg-red-600 text-white" : ""
             }`}
           >
-            miniTruck
+            Mini Truck
           </div>
         </div>
       </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {toys.map((toy) => (
           <ToyCard key={toy._id} toy={toy}></ToyCard>
         ))}

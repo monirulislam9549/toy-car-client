@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Rating from "react-rating";
+import { FaRegStar, FaStar } from "react-icons/fa";
 
 const ToyDetails = () => {
   const { id } = useParams();
@@ -11,7 +13,7 @@ const ToyDetails = () => {
       .then((data) => setDetailsToy(data));
   }, [id]);
   return (
-    <div>
+    <div className="my-5">
       <div>
         <img
           className=" w-full object-cover"
@@ -19,18 +21,32 @@ const ToyDetails = () => {
           alt=""
         />
       </div>
-      <div className="card lg:card-side bg-base-100 shadow-xl">
-        <figure>
-          <img className="w-[750px]" src={detailsToy.photo} alt="Album" />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title">{detailsToy.name}</h2>
-          <p>{detailsToy.description}</p>
+      <div className="lg:card-side bg-base-100 my-5 gap-10">
+        <div>
+          <img
+            className="w-[700px] rounded flex mx-auto"
+            src={detailsToy.photo}
+            alt="Album"
+          />
+        </div>
+        <div className="text-center leading-relaxed">
+          <h2 className="text-3xl font-bold"> {detailsToy.name}</h2>
+
+          <p>Price: ${detailsToy.price}</p>
+          <p>
+            Rating:{" "}
+            <Rating
+              className="text-yellow-500"
+              placeholderRating={detailsToy.rating}
+              readonly
+              emptySymbol={<FaRegStar></FaRegStar>}
+              placeholderSymbol={<FaStar></FaStar>}
+              fullSymbol={<FaStar></FaStar>}
+            ></Rating>
+          </p>
+          <p>Available Quantity: {detailsToy.quantity} </p>
           <p>Seller Name: {detailsToy.seller}</p>
           <p>Seller Email: {detailsToy.email}</p>
-          <p>Price: ${detailsToy.price}</p>
-          <p>Rating: {detailsToy.rating}</p>
-          <p>Available Quantity: {detailsToy.quantity} </p>
           <p>Description: {detailsToy.description}</p>
         </div>
       </div>

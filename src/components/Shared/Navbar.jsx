@@ -19,10 +19,10 @@ const Navbar = () => {
   };
 
   return (
-    <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full  md:px-24 lg:px-8 bg-slate-100">
+    <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full  md:px-24 lg:px-8 bg-black">
       <div className="relative flex items-center justify-between ">
         <Link to="/" className="inline-flex items-center">
-          <span className="ml-2 font-bold text-xl tracking-wide text-gray-800">
+          <span className="ml-2 font-bold text-xl tracking-wide text-white">
             Street Hero
           </span>
 
@@ -30,7 +30,7 @@ const Navbar = () => {
         </Link>
 
         {/* nav section  */}
-        <ul className="items-center hidden space-x-8 lg:flex">
+        <ul className="items-center hidden space-x-8 lg:flex ">
           <li>
             <NavLink
               to="/"
@@ -170,7 +170,7 @@ const Navbar = () => {
                     </li>
                     <li>
                       <Link
-                        to="/books"
+                        to="/blog"
                         className="font-medium tracking-wide text-gray-700 transition duration-200 hover:text-blue-400"
                       >
                         Blog
