@@ -18,9 +18,9 @@ const ToyCollection = () => {
   };
 
   return (
-    <div className="mb-5 px-5">
+    <div className="my-20 px-5">
       <h1 className="text-center font-bold text-5xl my-10 text-green-500">
-        Shop by category
+        Shop by Category
       </h1>
       <div>
         <div className="flex justify-center items-center bg-green-500 my-5 text-white p-5 font-semibold">
