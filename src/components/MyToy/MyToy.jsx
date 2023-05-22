@@ -90,7 +90,7 @@ const MyToy = () => {
             <th>Seller Name</th>
             <th>Seller Email</th>
             <th>Toy Name</th>
-            <th>Category</th>
+            <th>Sub-category</th>
             <th>Price</th>
             <th>Rating</th>
             <th>Quantity</th>

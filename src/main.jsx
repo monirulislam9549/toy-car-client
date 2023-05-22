@@ -15,6 +15,7 @@ import MyToy from "./components/MyToy/MyToy.jsx";
 import EditToys from "./components/EditToys/EditToys.jsx";
 import PrivateRoute from "./components/routes/PrivateRoute.jsx";
 import NotFound from "./components/NotFound/NotFound.jsx";
+import AllToy from "./components/AllToy/AllToy.jsx";
 
 const router = createBrowserRouter([
   {
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
       {
         path: "editToy/:id",
         element: <EditToys></EditToys>,
+      },
+      {
+        path: "allToy",
+        element: <AllToy></AllToy>,
       },
       {
         path: "login",

@@ -44,7 +44,7 @@ const Testimonial = () => {
         </div>
         <div>
           <div className="flex items-center">
-            <img src={`https://i.ibb.co/tCLpJkg/Ellipse-2-3.png`} alt="" />
+            <img src={`https://i.ibb.co/XpPWxbV/Ellipse-2-2.png`} alt="" />
             <div className="ml-4">
               <p className="text-base font-semibold">Awlad Hossain</p>
               <p>Businessman</p>
