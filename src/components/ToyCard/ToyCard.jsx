@@ -5,9 +5,13 @@ import { Link } from "react-router-dom";
 const ToyCard = ({ toy }) => {
   const { _id, name, photo, price, rating } = toy || {};
   return (
-    <div className="card card-compact bg-base-100 shadow-md h-[389px] w-[364px] rounded">
+    <div className="card card-compact bg-base-100 shadow-md h-[389px] w-[364px] rounded ">
       <figure className="border border-gray-500">
-        <img src={photo} alt="" />
+        <img
+          className="transition-all duration-500 ease-in-out transform hover:scale-110"
+          src={photo}
+          alt=""
+        />
       </figure>
       <div className="card-body bg-slate-300 rounded text-center">
         <h2 className="text-2xl font-bold">{name}</h2>

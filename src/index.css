@@ -9,3 +9,11 @@
 .default {
   @apply font-medium tracking-wide text-white transition-colors duration-200;
 }
+
+.image {
+  @apply transition-all duration-500 ease-in-out transform hover:scale-110;
+}
+
+.gallery {
+  @apply card card-compact w-96 bg-base-100 shadow-xl;
+}
