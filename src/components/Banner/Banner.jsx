@@ -1,6 +1,8 @@
 import sample1 from "../../assets/sample-1.jpg";
 import sample2 from "../../assets/sample-2.jpg";
 import sample3 from "../../assets/sample-3.jpg";
+// import AOS from "aos";
+// import "aos/dist/aos.css";
 
 const Banner = () => {
   return (

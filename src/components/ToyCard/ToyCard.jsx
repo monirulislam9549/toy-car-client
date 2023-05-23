@@ -5,7 +5,12 @@ import { Link } from "react-router-dom";
 const ToyCard = ({ toy }) => {
   const { _id, name, photo, price, rating } = toy || {};
   return (
-    <div className="card card-compact bg-base-100 shadow-md h-[389px] w-[364px] rounded ">
+    <div
+      className="card card-compact bg-base-100 shadow-md h-[389px] w-[364px] rounded"
+      data-aos="fade-down"
+      data-aos-easing="linear"
+      data-aos-duration="1500"
+    >
       <figure className="border border-gray-500">
         <img
           className="transition-all duration-500 ease-in-out transform hover:scale-110"

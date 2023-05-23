@@ -4,7 +4,10 @@ const Gallery = () => {
       <h1 className="text-center font-bold text-5xl my-10 text-green-500">
         Toy Gallery
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-5 ">
+      <div
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-5"
+        data-aos="fade-up"
+      >
         <div className="gallery">
           <figure>
             <img

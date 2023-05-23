@@ -19,7 +19,10 @@ const ToyCollection = () => {
 
   return (
     <div className="my-20 px-5">
-      <h1 className="text-center font-bold text-5xl my-10 text-green-500">
+      <h1
+        className="text-center font-bold text-5xl my-10 text-green-500"
+        data-aos="zoom-out-left"
+      >
         Shop by Category
       </h1>
       <div>

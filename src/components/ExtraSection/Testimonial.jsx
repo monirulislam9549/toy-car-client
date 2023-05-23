@@ -16,7 +16,7 @@ const Testimonial = () => {
         </p>
       </div>
       <div className="grid lg:grid-cols-2 px-10 mb-10">
-        <div>
+        <div data-aos="fade-right" data-aos-duration="3000">
           <div className="flex items-center">
             <img src={`https://i.ibb.co/tCLpJkg/Ellipse-2-3.png`} alt="" />
             <div className="ml-4">
@@ -42,7 +42,7 @@ const Testimonial = () => {
             ></Rating>
           </div>
         </div>
-        <div>
+        <div data-aos="fade-left" data-aos-duration="3000">
           <div className="flex items-center">
             <img src={`https://i.ibb.co/XpPWxbV/Ellipse-2-2.png`} alt="" />
             <div className="ml-4">

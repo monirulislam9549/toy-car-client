@@ -1,6 +1,10 @@
 const SpecialOffer = () => {
   return (
-    <div className="my-10 relative">
+    <div
+      className="my-10 relative"
+      data-aos="fade-up"
+      data-aos-anchor-placement="top-center"
+    >
       <h1 className="mb-5 font-bold text-3xl text-center text-green-500">
         Special Offer
       </h1>
